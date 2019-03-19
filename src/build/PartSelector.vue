@@ -43,20 +43,21 @@ export default {
   created() {
     this.emitSelectedPart();
   },
+  updated() {
+    this.emitSelectedPart();
+  },
   methods: {
     selectNextPart() {
       this.selectedPartIndex = getNextValidIndex(
         this.selectedPartIndex,
         this.parts.length,
       );
-      this.emitSelectedPart();
     },
     selectPreviousPart() {
       this.selectedPartIndex = getPreviousValidIndex(
         this.selectedPartIndex,
         this.parts.length,
       );
-      this.emitSelectedPart();
     },
     emitSelectedPart() {
       this.$emit('partSelected', this.selectedPart);
