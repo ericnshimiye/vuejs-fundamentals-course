@@ -57,7 +57,7 @@ export default {
   name: 'RobotBuilder',
   components: { PartSelector, CollapsibleSection },
   created() {
-    this.$store.dispatch('getParts');
+    this.$store.dispatch('robots/getParts');
   },
   beforeRouteLeave(to, from, next) {
     if (this.addedToCart) {
@@ -97,7 +97,7 @@ export default {
        + robot.rightArm.cost + robot.base.cost;
 
       this.$store
-        .dispatch('addRobotToCart', Object.assign({}, robot, { cost }))
+        .dispatch('robots/addRobotToCart', Object.assign({}, robot, { cost }))
         .then(() => {
           this.$router.push('/cart');
         });
