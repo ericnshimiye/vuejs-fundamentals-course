@@ -28,7 +28,7 @@ export default {
       type: String,
       required: true,
       validator(value) {
-        return ['left', 'right', 'bottom', 'center'].includes(value);
+        return ['top', 'left', 'right', 'bottom', 'center'].includes(value);
       },
     },
   },
